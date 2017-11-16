@@ -159,9 +159,7 @@ export class Thead extends React.Component {
                     <tr className="reactable-btnPagination">
                         <td colSpan={columns.length}>
                             <div className="reactable-topDesign">
-                                <div className={filtering ? 'reactable-mainElem' : 'reactable-mainElem no-filter'}>
-                                    {middlePaginationElem}
-                                </div>
+                                {middlePaginationElem}
                             </div>
                         </td>
                     </tr> : null

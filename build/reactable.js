@@ -843,11 +843,7 @@ window.ReactDOM["default"] = window.ReactDOM;
                             _react['default'].createElement(
                                 'div',
                                 { className: 'reactable-topDesign' },
-                                _react['default'].createElement(
-                                    'div',
-                                    { className: filtering ? 'reactable-mainElem' : 'reactable-mainElem no-filter' },
-                                    middlePaginationElem
-                                )
+                                middlePaginationElem
                             )
                         )
                     ) : null,

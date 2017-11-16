@@ -62,7 +62,7 @@ export class Thead extends React.Component {
     }
 
     render() {
-        const {sort, sortableColumns, filtering, columns, onFilter, onClean, filterPlaceholder, currentFilter, topPagination, filterCleanBtn, locale, itemsPerPage, itemsNumber, numPages, currentPage, onPageChange, topPaginationElem} = this.props;
+        const {sort, sortableColumns, filtering, columns, onFilter, onClean, filterPlaceholder, currentFilter, topPagination, middlePagination, filterCleanBtn, locale, itemsPerPage, itemsNumber, numPages, currentPage, onPageChange, topPaginationElem, middlePaginationElem} = this.props;
 
         // Declare the list of Ths
         var Ths = [];
@@ -150,6 +150,17 @@ export class Thead extends React.Component {
                                 </div>
                                 <div className="reactable-rightElem">
                                     {topPaginationElem.right}
+                                </div>
+                            </div>
+                        </td>
+                    </tr> : null
+                }
+                {middlePagination ?
+                    <tr className="reactable-btnPagination">
+                        <td colSpan={columns.length}>
+                            <div className="reactable-topDesign">
+                                <div className={filtering ? 'reactable-mainElem' : 'reactable-mainElem no-filter'}>
+                                    {middlePaginationElem}
                                 </div>
                             </div>
                         </td>

@@ -28,10 +28,12 @@ window.ReactDOM["default"] = window.ReactDOM;
         data: true,
         children: true,
         topPagination: true,
+        middlePagination: true,
         itemsNumber: true,
         numPages: true,
         currentPage: true,
         topPaginationElem: true,
+        middlePaginationElem: true,
         filtering: true,
         onFilter: true,
         filterCleanBtn: true,
@@ -725,6 +727,7 @@ window.ReactDOM["default"] = window.ReactDOM;
                 var filterPlaceholder = _props.filterPlaceholder;
                 var currentFilter = _props.currentFilter;
                 var topPagination = _props.topPagination;
+                var middlePagination = _props.middlePagination;
                 var filterCleanBtn = _props.filterCleanBtn;
                 var locale = _props.locale;
                 var itemsPerPage = _props.itemsPerPage;
@@ -733,6 +736,7 @@ window.ReactDOM["default"] = window.ReactDOM;
                 var currentPage = _props.currentPage;
                 var onPageChange = _props.onPageChange;
                 var topPaginationElem = _props.topPaginationElem;
+                var middlePaginationElem = _props.middlePaginationElem;
 
                 // Declare the list of Ths
                 var Ths = [];
@@ -826,6 +830,23 @@ window.ReactDOM["default"] = window.ReactDOM;
                                     'div',
                                     { className: 'reactable-rightElem' },
                                     topPaginationElem.right
+                                )
+                            )
+                        )
+                    ) : null,
+                    middlePagination ? _react['default'].createElement(
+                        'tr',
+                        { className: 'reactable-btnPagination' },
+                        _react['default'].createElement(
+                            'td',
+                            { colSpan: columns.length },
+                            _react['default'].createElement(
+                                'div',
+                                { className: 'reactable-topDesign' },
+                                _react['default'].createElement(
+                                    'div',
+                                    { className: filtering ? 'reactable-mainElem' : 'reactable-mainElem no-filter' },
+                                    middlePaginationElem
                                 )
                             )
                         )
@@ -1787,6 +1808,7 @@ window.ReactDOM["default"] = window.ReactDOM;
                 var itemsPerPage = 0;
                 var pagination = false;
                 var topPagination = this.props.topPagination || false;
+                var middlePagination = this.props.middlePagination || false;
                 var bottomPagination = this.props.bottomPagination || false;
                 var numPages = undefined;
                 var currentPage = this.state.currentPage;
@@ -1828,6 +1850,7 @@ window.ReactDOM["default"] = window.ReactDOM;
                         },
                         columns: columns,
                         topPagination: topPagination,
+                        middlePagination: middlePagination,
                         itemsNumber: filteredChildren.length,
                         itemsPerPage: itemsPerPage,
                         numPages: numPages,
@@ -1836,6 +1859,7 @@ window.ReactDOM["default"] = window.ReactDOM;
                             left: this.props.topPaginationElemL,
                             right: this.props.topPaginationElemR
                         },
+                        middlePaginationElem: this.props.middlePaginationElem,
                         filtering: filtering,
                         onFilter: function (filter) {
                             _this.setState({ filter: filter });

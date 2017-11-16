@@ -465,6 +465,7 @@ export class Table extends React.Component {
         let itemsPerPage = 0;
         let pagination = false;
         let topPagination = this.props.topPagination || false;
+        let middlePagination = this.props.middlePagination || false;
         let bottomPagination = this.props.bottomPagination || false;
         let numPages;
         let currentPage = this.state.currentPage;
@@ -498,6 +499,7 @@ export class Table extends React.Component {
                     ref={t => this.headEl = t}
                     columns={columns}
                     topPagination={topPagination}
+                    middlePagination={middlePagination}
                     itemsNumber={filteredChildren.length}
                     itemsPerPage={itemsPerPage}
                     numPages={numPages}
@@ -506,6 +508,7 @@ export class Table extends React.Component {
                         left: this.props.topPaginationElemL,
                         right: this.props.topPaginationElemR,
                     }}
+                    middlePaginationElem={this.props.middlePaginationElem}
                     filtering={filtering}
                     onFilter={filter => {
                         this.setState({ filter: filter });
